@@ -5,7 +5,7 @@ import data from './data.json';
 import './Style.css'
 
 function App() {
-  const [books, setBooks] = useState(data.books);
+  const [books, setBooks] = useState([]);
 
 
   useEffect(() => {
@@ -34,5 +34,3 @@ function App() {
 }
 
 export default App;
-
-

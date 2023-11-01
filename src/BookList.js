@@ -1,10 +1,10 @@
 import React from "react";
-import Book from "./Book";
 
 function BookList({ books }) {
   return (
-    <div className="book-list">
-      <h2>List of Books</h2>
+    <div className="book-list border">
+      <h2 className="flexible">List of Books</h2>
+      <div className="flexible">
       {books.length > 0 ? (
         <table>
           <thead>
@@ -17,14 +17,23 @@ function BookList({ books }) {
             </tr>
           </thead>
           <tbody>
-            {books.map((book) => (
-              <Book key={book.id} book={book} />
+            {books.map((item) => (
+              <tr key={item.id}>
+                <td>{item.title}</td>
+                <td>{item.author}</td>
+                <td>{item.isbn}</td>
+                <td>{item.dateAdded}</td>
+                <td>
+                  <button>Delete</button>
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>
       ) : (
         <p>No books available.</p>
       )}
+      </div>
     </div>
   );
 }
